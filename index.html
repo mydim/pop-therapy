@@ -499,6 +499,13 @@
     .world-shop.locked { opacity: .75; border-style: dashed; }
     .world-shop .upgrade { background: var(--card, #fff); }
     html[data-dark="true"] .world-shop .upgrade { background: #1c1b28; }
+    /* Each area only shows its own upgrades: Plain shows the originals, a world shows just its two. */
+    html[data-scene]:not([data-scene="plain"]) .shop > .upgrade,
+    html[data-scene="plain"] .world-shop,
+    html[data-scene="ocean"] .world-shop:not([data-world="ocean"]),
+    html[data-scene="woods"] .world-shop:not([data-world="woods"]),
+    html[data-scene="tower"] .world-shop:not([data-world="tower"]) { display: none; }
+    html[data-scene]:not([data-scene="plain"]) .world-shop { margin-top: 4px; }
     @media (max-width: 780px) {
       .world-shop { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 9px; }
       .world-shop-head { grid-column: 1 / -1; }

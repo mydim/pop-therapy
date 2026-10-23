@@ -22,7 +22,16 @@
     button:disabled { cursor: not-allowed; }
     button, a { touch-action: manipulation; }
     .shell { max-width: 1300px; margin: auto; padding: 0 46px; }
-    header { height: 104px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    header { min-height: 104px; padding: 16px 0; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; }
+    .header-tagline { flex: 1; min-width: 0; text-align: center; }
+    .header-tagline .eyebrow { margin-bottom: 5px; }
+    .header-tagline h1 { font-size: clamp(22px, 2.3vw, 30px); letter-spacing: -1px; margin-bottom: 4px; }
+    .header-tagline .subtitle { font-size: 12px; line-height: 1.5; }
+    @media (min-width: 961px) { .header-tagline h1 br { display: none; } }
+    @media (max-width: 960px) {
+      header { flex-wrap: wrap; }
+      .header-tagline { order: 3; flex-basis: 100%; text-align: left; }
+    }
     .brand { display: flex; gap: 12px; align-items: center; }
     .brand-icon { width: 38px; height: 38px; display: grid; grid-template-columns: repeat(2, 12px); gap: 4px; align-content: center; justify-content: center; transform: rotate(-9deg); }
     .brand-icon i { width: 12px; height: 12px; border-radius: 50%; background: var(--purple); box-shadow: inset 2px 2px 2px #ffffff70; }
@@ -38,6 +47,8 @@
     .sound-button svg { width: 16px; height: 16px; }
     main { padding: 42px 0 28px; }
     .intro { display: flex; justify-content: space-between; align-items: center; gap: 30px; margin-bottom: 32px; }
+    .intro .stats { flex: 1; }
+    .intro .stat { flex: 1; }
     .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2.1px; color: var(--purple); text-transform: uppercase; margin: 0 0 12px; }
     h1 { font-size: clamp(30px, 3.2vw, 44px); letter-spacing: -1.9px; line-height: 1.13; font-weight: 650; margin: 0 0 12px; }
     h1 em { font-style: normal; color: var(--purple); }
@@ -211,10 +222,10 @@
       .hint { max-width: 180px; }
     }
     @media (max-width: 780px) {
-      header { height: 80px; }
+      header { min-height: 80px; }
       main { padding-top: 28px; }
       .intro { align-items: flex-start; gap: 23px; }
-      .stats { flex-direction: column; gap: 8px; }
+      .stats { gap: 8px; }
       .stat, .stat.wallet { min-width: 120px; padding: 11px 16px; }
       .stat-label { font-size: 9px; margin-bottom: 2px; }
       .stat-value { font-size: 22px; }
@@ -237,10 +248,13 @@
       .sound-button { padding: 8px; }
       .sound-button .sound-label { display: none; }
       .intro { gap: 13px; margin-bottom: 23px; }
-      h1 { font-size: 30px; letter-spacing: -1.4px; }
+      h1, .header-tagline h1 { font-size: 26px; letter-spacing: -1.2px; }
       .eyebrow { font-size: 8px; letter-spacing: 1.5px; }
-      .subtitle { font-size: 11px; max-width: 190px; }
-      .stat, .stat.wallet { min-width: 94px; padding: 12px; }
+      .subtitle, .header-tagline .subtitle { font-size: 11px; }
+      .stat, .stat.wallet { min-width: 0; padding: 12px; }
+      header { column-gap: 8px; }
+      .intro .stats { display: grid; grid-template-columns: 1fr 1fr; }
+      .intro .stat.wallet { grid-column: 1 / -1; }
       .stat-value { font-size: 21px; }
       .stat-label { font-size: 8px; letter-spacing: .8px; }
       .play-toolbar { padding: 16px; }
@@ -530,7 +544,7 @@
     }
     .upgrade-icon.emoji-icon { font-size: 18px; background: color-mix(in srgb, var(--world-ink) 14%, transparent); }
     html.scenic header, html.scenic .intro, html.scenic footer { background: var(--glass); border: 1px solid var(--glass-line); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
-    html.scenic header { margin-top: 14px; padding: 0 22px; border-radius: 18px; }
+    html.scenic header { margin-top: 14px; padding: 14px 22px; border-radius: 18px; }
     html.scenic .intro { padding: 24px 28px; border-radius: 22px; }
     html.scenic footer { padding: 16px 22px; border-radius: 16px; margin-bottom: 18px; }
     html.scenic .under-board { flex-wrap: wrap; width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; padding: 8px 18px; border: 1px solid var(--glass-line); border-radius: 30px; background: var(--glass); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: var(--muted); }
@@ -540,7 +554,7 @@
       #save-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     }
     @media (max-width: 480px) {
-      html.scenic header { padding: 0 12px; margin-top: 10px; }
+      html.scenic header { padding: 12px; margin-top: 10px; }
       html.scenic .intro { padding: 16px; }
       .scene-option { padding: 6px 9px; font-size: 10px; }
       .scene-bar-label { margin-left: 5px; }
@@ -555,6 +569,11 @@
       <div class="brand" aria-label="Pop Therapy">
         <span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         <div class="brand-name">pop<span>therapy</span><span style="color:#9383c5">.</span></div>
+      </div>
+      <div class="header-tagline">
+        <p class="eyebrow">A little pocket of happy</p>
+        <h1>Less thinking.<br> More <em>popping.</em></h1>
+        <p class="subtitle">Pop a little. Unwind a lot. Make every bubble count.</p>
       </div>
       <div class="header-right">
         <div class="save-status" id="save-status" role="status"><span class="save-dot"></span><span id="save-text">Progress saved locally</span></div>
@@ -576,12 +595,7 @@
         <button class="scene-option" data-scene="woods" aria-pressed="false"><span class="scene-emoji" aria-hidden="true">&#127794;</span>Woods<span class="scene-lock"></span></button>
         <button class="scene-option" data-scene="tower" aria-pressed="false"><span class="scene-emoji" aria-hidden="true">&#127984;</span>Tower<span class="scene-lock"></span></button>
       </div>
-      <section class="intro" aria-labelledby="title">
-        <div>
-          <p class="eyebrow">A little pocket of happy</p>
-          <h1>Less thinking.<br>More <em>popping.</em></h1>
-          <p class="subtitle">Pop a little. Unwind a lot. Make every bubble count.</p>
-        </div>
+      <section class="intro" aria-label="Your stats">
         <div class="stats">
           <div class="stat wallet">
             <span class="stat-label">Your pop coins</span>

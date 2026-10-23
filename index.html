@@ -267,7 +267,12 @@
     .rebirth-store-link { width: 100%; margin-top: 8px; padding: 10px; border: 1px dashed #b9a6e4; border-radius: 8px; background: #ffffffa0; color: #6a4fa8; font-size: 11px; font-weight: 650; }
     .rebirth-store-link:hover { background: white; }
     .rebirth-points-preview { margin-top: 8px; padding: 10px; text-align: center; border-radius: 12px; background: linear-gradient(135deg, #7c5ce0, #b35fd6); color: white; font-size: 15px; font-weight: 700; }
-    .rebirth-store { margin-top: 24px; padding: 28px; background: white; border: 1px solid var(--line); border-radius: var(--radius); scroll-margin-top: 16px; }
+    .rebirth-store { width: min(1080px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto; padding: 28px; overflow: auto; overscroll-behavior: contain; background: white; border: 1px solid var(--line); border-radius: var(--radius); }
+    .rebirth-store[open] { animation: store-in .22s ease-out; }
+    @keyframes store-in { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+    .store-close { position: sticky; top: 0; float: right; z-index: 3; width: 36px; height: 36px; margin: -12px -12px 0 12px; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--ink); font-size: 14px; line-height: 1; box-shadow: 0 4px 14px #2a203a1f; }
+    .store-close:hover { background: #f3f0fa; }
+    html[data-dark="true"] .store-close { background: #262435; border-color: #34314b; color: #e9e6f5; }
     .store-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 22px; }
     .store-head h2 { margin: 0 0 6px; font-size: 26px; letter-spacing: -1px; }
     .store-sub { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.6; max-width: 470px; }
@@ -301,6 +306,13 @@
     .egg-section-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 22px 0 10px; font-size: 13px; font-weight: 700; }
     .egg-section-title span { font-size: 10px; font-weight: 500; color: var(--muted); }
     .egg-grid.world-eggs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    html[data-scene="plain"] #world-egg-grid,
+    html[data-scene]:not([data-scene="plain"]) #egg-grid,
+    html[data-scene]:not([data-scene="plain"]) .egg-section-title,
+    html[data-scene="ocean"] #world-egg-grid .egg-card:not([data-world="ocean"]),
+    html[data-scene="woods"] #world-egg-grid .egg-card:not([data-world="woods"]),
+    html[data-scene="tower"] #world-egg-grid .egg-card:not([data-world="tower"]) { display: none; }
+    html[data-scene]:not([data-scene="plain"]) .egg-grid.world-eggs { grid-template-columns: minmax(0, 240px); justify-content: center; }
     .egg-world { display: block; margin-top: 3px; font-size: 9px; font-weight: 650; color: var(--muted); }
     .egg[data-egg="lava"], [data-egg="lava"] .egg { box-shadow: inset -7px -9px 16px #0000002e, inset 5px 5px 12px #ffffff50, 0 0 22px -4px #ff6a2a99; }
     .egg[data-egg="cosmic"], [data-egg="cosmic"] .egg { box-shadow: inset -7px -9px 16px #00000050, inset 5px 5px 12px #ffffff30, 0 0 24px -4px #8b6cff; }
@@ -340,7 +352,7 @@
     .hatch-stage { position: relative; display: grid; place-items: center; height: 190px; margin: -6px 0 8px; }
     .hatch-stage > * { grid-area: 1 / 1; }
     .hatch-stage .egg { --size: 96px; transition: opacity .25s, transform .25s; }
-    .hatch-rays { width: 270px; height: 270px; border-radius: 50%; background: repeating-conic-gradient(color-mix(in srgb, var(--r) 45%, transparent) 0 10deg, transparent 10deg 30deg); -webkit-mask: radial-gradient(circle, #000 18%, transparent 68%); mask: radial-gradient(circle, #000 18%, transparent 68%); opacity: 0; transform: scale(.4); transition: opacity .4s, transform .6s; }
+    .hatch-rays { pointer-events: none; width: 270px; height: 270px; border-radius: 50%; background: repeating-conic-gradient(color-mix(in srgb, var(--r) 45%, transparent) 0 10deg, transparent 10deg 30deg); -webkit-mask: radial-gradient(circle, #000 18%, transparent 68%); mask: radial-gradient(circle, #000 18%, transparent 68%); opacity: 0; transform: scale(.4); transition: opacity .4s, transform .6s; }
     .hatch-pet { font-size: 86px; line-height: 1; opacity: 0; transform: scale(.2) translateY(20px); }
     .hatch-flash { position: absolute; inset: -40px; background: radial-gradient(circle, #ffffff 0, #ffffff00 60%); opacity: 0; pointer-events: none; }
     [data-phase="wobble"] .egg { animation: egg-shake .55s ease-in-out infinite; }
@@ -361,7 +373,8 @@
     @keyframes flash { 0% { opacity: 1; } 100% { opacity: 0; } }
     @media (max-width: 1000px) { .egg-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     @media (max-width: 480px) {
-      .rebirth-store { padding: 20px 14px; }
+      .rebirth-store { padding: 20px 14px; width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
+      .store-close { margin: -8px -4px 0 8px; }
       .store-head { flex-direction: column; align-items: stretch; }
       .store-head h2 { font-size: 22px; }
       .egg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
@@ -737,11 +750,12 @@
             <div class="rebirth-goal"><span id="rebirth-count">0 rebirths</span>                        <span id="rebirth-cost">10,000 coins</span></div>
                         <div class="rebirth-meter" role="progressbar" aria-label="Coins toward rebirth" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="0" id="rebirth-progress"><div id="rebirth-fill"></div></div>
             <button class="rebirth-button" id="rebirth" disabled>Rebirth for a 2x boost</button>
-            <button class="rebirth-store-link" id="open-store">&#10022; <span id="rp-mini">0</span> rebirth points &middot; Egg store &darr;</button>
+            <button class="rebirth-store-link" id="open-store">&#10022; <span id="rp-mini">0</span> rebirth points &middot; Open egg store</button>
           </section>
         </aside>
       </div>
-      <section class="rebirth-store" id="rebirth-store" aria-labelledby="store-title">
+      <dialog class="rebirth-store" id="rebirth-store" aria-labelledby="store-title">
+        <button class="store-close" id="close-store" aria-label="Close egg store">&#10005;</button>
         <div class="store-head">
           <div>
             <p class="eyebrow">Rebirth store</p>
@@ -755,7 +769,7 @@
           </div>
         </div>
         <div class="egg-grid" id="egg-grid"></div>
-        <h3 class="egg-section-title">World eggs <span>Each world hides 5 pets you can't find anywhere else.</span></h3>
+        <h3 class="egg-section-title">World eggs <span>Each world hides 5 pets you can't find anywhere else. Go to that world to find its egg.</span></h3>
         <div class="egg-grid world-eggs" id="world-egg-grid"></div>
         <div class="pets-panel">
           <div class="pets-head">
@@ -767,7 +781,7 @@
           <p class="pet-totals" id="pet-totals">No pets yet. Rebirth, then hatch your first egg!</p>
           <div class="pet-grid" id="pet-grid"></div>
         </div>
-      </section>
+      </dialog>
       <footer><span class="little-note">Made for your just-one-more moments.</span><span>No downloads. No pressure. Just pop.</span></footer>
     </main>
   </div>
@@ -1016,6 +1030,9 @@
       }
 
       function toast(message) {
+        // Keep toasts visible above any open popup (dialogs live in the top layer).
+        const host = [...document.querySelectorAll("dialog[open]")].pop() || document.body;
+        if ($("toast").parentElement !== host) host.append($("toast"));
         clearTimeout(toastTimer);
         $("toast").textContent = message;
         $("toast").classList.add("visible");
@@ -1069,6 +1086,7 @@
           const card = document.createElement("article");
           card.className = "egg-card";
           card.dataset.egg = egg.id;
+          card.dataset.world = egg.world || "plain";
           const odds = Object.entries(egg.odds).map(([rarity, chance]) =>
             `<span class="odd" style="--r:${RARITY[rarity].color}">${RARITY[rarity].label} ${chance}%</span>`).join("");
           const where = egg.world ? `<span class="egg-world">${WORLDS[egg.world].emoji} ${WORLDS[egg.world].name} world pets</span>` : "";
@@ -1225,7 +1243,7 @@
 
       function hatch(eggId) {
         const egg = EGGS.find(item => item.id === eggId);
-        if (!egg || state.rebirthPoints < egg.cost || (egg.world && !worldUnlocked(egg.world))) return;
+        if (!egg || state.rebirthPoints < egg.cost || (egg.world && !worldUnlocked(egg.world)) || (egg.world || "plain") !== state.scene) return;
         enableAudio();
         state.rebirthPoints -= egg.cost;
         const id = rollPet(egg);
@@ -2280,7 +2298,20 @@
           `Reborn! Earnings are now ${format(earningsBoost())}x and you got ${format(gain)} \u2726 rebirth point${gain === 1 ? "" : "s"}${petSlots() > slotsBefore ? " plus a new pet slot" : ""}. Visit the egg store!`);
       });
       $("open-store").addEventListener("click", () => {
-        $("rebirth-store").scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "start" });
+        $("rebirth-store").showModal();
+        $("close-store").focus({ preventScroll: true });
+      });
+      $("close-store").addEventListener("click", () => $("rebirth-store").close());
+      $("rebirth-store").addEventListener("keydown", event => {
+        if (event.key === "Escape" && !$("hatch-dialog").open) {
+          event.preventDefault();
+          event.currentTarget.close();
+        }
+      });
+      $("rebirth-store").addEventListener("click", event => {
+        if (event.target !== event.currentTarget) return;
+        const r = event.currentTarget.getBoundingClientRect();
+        if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) event.currentTarget.close();
       });
       const hatchClick = event => {
         const button = event.target.closest("[data-hatch]");

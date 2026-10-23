@@ -47,29 +47,11 @@
     .sound-button svg { width: 16px; height: 16px; }
     main { padding: 42px 0 28px; }
     .intro { display: flex; justify-content: space-between; align-items: center; gap: 30px; margin-bottom: 32px; }
-    .intro .stats { flex: 1; }
-    .intro .stat { flex: 1; }
     .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2.1px; color: var(--purple); text-transform: uppercase; margin: 0 0 12px; }
     h1 { font-size: clamp(30px, 3.2vw, 44px); letter-spacing: -1.9px; line-height: 1.13; font-weight: 650; margin: 0 0 12px; }
     h1 em { font-style: normal; color: var(--purple); }
     .subtitle { margin: 0; font-size: 13px; line-height: 1.7; color: var(--muted); }
-    .stats { display: flex; gap: 12px; flex-shrink: 0; }
-    .stat { min-width: 133px; padding: 19px 23px; border: 1px solid var(--line); border-radius: 16px; background: #ffffff80; }
-    .stat.wallet { background: var(--lime); border-color: var(--lime); min-width: 150px; }
     .stat-label { display: block; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 7px; color: #777980; }
-    .wallet .stat-label { color: #586a34; }
-    .stat-value { font-size: 29px; font-weight: 700; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
-    .rebirth-stat { font: inherit; color: inherit; text-align: left; cursor: pointer; transition: transform .15s, border-color .15s; }
-    .rebirth-stat:hover { transform: translateY(-2px); border-color: #b8a7e6; }
-    .rebirth-stat-track { height: 4px; margin-top: 8px; border-radius: 4px; background: #e6e1f3; overflow: hidden; }
-    .rebirth-stat-track > div { height: 100%; width: 0; border-radius: inherit; background: #7860b1; transition: width .3s; }
-    .rebirth-stat.ready { background: #7860b1; border-color: #7860b1; color: white; animation: rebirth-glow 2s ease-in-out infinite; }
-    .rebirth-stat.ready .stat-label { color: #ffffffd0; }
-    .rebirth-stat.ready .rebirth-stat-track { background: #ffffff40; }
-    .rebirth-stat.ready .rebirth-stat-track > div { background: white; }
-    @keyframes rebirth-glow { 50% { box-shadow: 0 0 0 5px #7860b133; } }
-    .coin-icon { display: inline-grid; place-items: center; width: 20px; height: 20px; font-size: 12px; border: 1.5px solid currentColor; border-radius: 50%; vertical-align: 4px; margin-right: 5px; opacity: .65; }
-    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; align-items: start; gap: 24px; }
     .play-card { background: white; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
     .play-toolbar { display: flex; justify-content: space-between; align-items: center; padding: 21px 25px; gap: 12px; }
     .sheet-label { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 650; }
@@ -79,22 +61,14 @@
     .combo-fill { height: 100%; background: var(--purple); transform: scaleX(0); transform-origin: left; }
     .combo.active { color: var(--purple); font-weight: 700; }
     .effects-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 0 23px 17px; }
-    .burst-options { display: flex; gap: 4px; padding: 4px; border: 1px solid #e9e6f0; border-radius: 11px; background: #f8f7fb; }
-    .burst-option { display: flex; align-items: center; gap: 5px; padding: 7px 10px; background: transparent; border: 0; border-radius: 7px; font-size: 10px; color: var(--muted); }
-    .burst-option[aria-pressed="true"] { color: #5e479b; background: white; box-shadow: 0 2px 5px #35215313; font-weight: 650; }
     .burst-option svg { width: 14px; height: 14px; }
     .epic-tag { font-size: 7px; font-weight: 800; letter-spacing: .7px; color: #c16b32; }
     .renderer-status { display: flex; align-items: center; gap: 5px; font-size: 8px; font-weight: 650; letter-spacing: 1px; color: #7d8d70; }
     .renderer-status::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
     .sound-themes { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 0 23px 15px; }
     .sound-themes-label { font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
-    .sound-theme { display: flex; align-items: center; gap: 5px; padding: 6px 10px; border: 1px solid #ebe8f1; border-radius: 30px; background: white; font-size: 10px; color: #6f6c7c; transition: border-color .15s, background .15s, transform .15s; }
-    .sound-theme:hover { transform: translateY(-1px); border-color: #d6cfe6; }
-    .sound-theme[aria-pressed="true"] { color: var(--ink); font-weight: 650; border-color: var(--theme-color); background: var(--theme-tint); }
-    .music-toggle { display: flex; align-items: center; gap: 7px; margin-left: auto; padding: 5px 10px 5px 6px; border: 1px solid #ebe8f1; border-radius: 30px; background: white; font-size: 10px; font-weight: 650; color: #6f6c7c; }
     .music-toggle .switch { position: relative; width: 26px; height: 15px; border-radius: 10px; background: #dcd8e6; transition: background .2s; }
     .music-toggle .switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px; border-radius: 50%; background: white; box-shadow: 0 1px 2px rgba(0,0,0,.2); transition: transform .2s; }
-    .music-toggle[aria-pressed="true"] { color: var(--ink); border-color: #b7a6e8; background: #f3effd; }
     .auto-toggle { align-self: center; flex-shrink: 0; }
     .auto-toggle[hidden] { display: none; }
     .music-toggle[aria-pressed="true"] .switch { background: #7c5ce0; }
@@ -156,39 +130,7 @@
     .under-board span { display: flex; align-items: center; gap: 5px; }
     .under-board span[hidden] { display: none; }
     .under-board b { color: #646575; font-weight: 600; }
-    .shop { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 23px 20px 19px; }
-    .shop-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
     h2 { margin: 0; font-size: 19px; font-weight: 650; letter-spacing: -.6px; }
-    .shop-heading span { font-size: 19px; color: var(--purple); }
-    .shop-subtitle { color: var(--muted); font-size: 11px; margin: 0 0 20px; line-height: 1.6; }
-    .upgrade { border: 1px solid #e9e7f0; border-radius: 13px; padding: 14px; margin-top: 10px; }
-    .upgrade-top { display: flex; gap: 11px; align-items: center; }
-    .upgrade-icon { flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; }
-    .upgrade-icon svg { width: 19px; height: 19px; }
-    .icon-purple { color: #7e65c7; background: #f0eafa; }
-    .icon-orange { color: #c48357; background: #fbf0e5; }
-    .icon-green { color: #7b9a5e; background: #eef4e7; }
-    .icon-gold { color: #b39743; background: #faf5df; }
-    .upgrade-name { font-size: 12px; font-weight: 650; }
-    .level { font-size: 9px; color: #8a8798; margin-top: 4px; }
-    .upgrade-desc { font-size: 10px; line-height: 1.6; color: var(--muted); margin: 10px 0 11px; min-height: 16px; }
-    .buy { width: 100%; display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 600; border: 0; border-radius: 7px; padding: 9px 11px; background: var(--lime); transition: background .15s, transform .15s; }
-    .buy:not(:disabled):hover { background: #d0e67a; transform: translateY(-1px); }
-    .buy:disabled { background: #f0eff4; color: #97949f; }
-    .buy .price { display: flex; gap: 5px; align-items: center; }
-    .mini-coin { border: 1px solid currentColor; display: inline-grid; place-items: center; width: 12px; height: 12px; border-radius: 50%; font-size: 8px; }
-    .shop-note { text-align: center; margin: 16px 0 0; font-size: 10px; color: #96929f; line-height: 1.5; }
-    .rebirth-card { grid-column: 1 / -1; margin-top: 20px; padding: 18px 15px 15px; background: linear-gradient(135deg, #f0ebfb, #f7f5fd); border: 1px solid #e4dcf4; border-radius: 13px; }
-    .rebirth-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-    .rebirth-top h3 { margin: 0; font-size: 14px; letter-spacing: -.3px; }
-    .boost-badge { background: #e4daf7; color: #7254a6; padding: 5px 7px; border-radius: 5px; font-size: 9px; font-weight: 700; white-space: nowrap; }
-    .rebirth-card p { font-size: 10px; color: #888095; line-height: 1.7; margin: 9px 0 12px; }
-    .rebirth-goal { display: flex; justify-content: space-between; gap: 10px; color: #84798e; font-size: 9px; margin-bottom: 8px; }
-    .rebirth-meter { height: 4px; background: #e5def0; border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
-    .rebirth-meter div { height: 100%; width: 0; background: #a286d3; transition: width .3s; }
-    .rebirth-button { width: 100%; padding: 11px; color: white; background: #7860b1; border: 0; border-radius: 8px; font-size: 11px; font-weight: 650; }
-    .rebirth-button:hover:not(:disabled) { background: #614995; }
-    .rebirth-button:disabled { background: #dfd8eb; color: #a299b2; }
     dialog { width: min(420px, calc(100vw - 32px)); border: 1px solid #e0d9ec; border-radius: 23px; padding: 29px; color: var(--ink); box-shadow: 0 25px 100px #20162d35; }
     dialog::backdrop { background: #28203970; backdrop-filter: blur(5px); }
     dialog h2 { font-size: 24px; margin-bottom: 13px; }
@@ -213,10 +155,6 @@
     @media (min-width: 1250px) { .board { gap: 15px; padding: 29px; } }
     @media (max-width: 1000px) {
       .shell { padding: 0 25px; }
-      .layout { grid-template-columns: minmax(0, 1fr) 285px; gap: 18px; }
-      .stats { gap: 8px; }
-      .stat { min-width: 108px; padding: 16px; }
-      .stat.wallet { min-width: 125px; }
       .board { gap: 9px; padding: 18px; }
       .play-toolbar, .play-footer { padding-left: 19px; padding-right: 19px; }
       .hint { max-width: 180px; }
@@ -225,17 +163,8 @@
       header { min-height: 80px; }
       main { padding-top: 28px; }
       .intro { align-items: flex-start; gap: 23px; }
-      .stats { gap: 8px; }
-      .stat, .stat.wallet { min-width: 120px; padding: 11px 16px; }
       .stat-label { font-size: 9px; margin-bottom: 2px; }
-      .stat-value { font-size: 22px; }
-      .coin-icon { width: 16px; height: 16px; vertical-align: 2px; font-size: 10px; }
-      .layout { grid-template-columns: 1fr; }
       .board { padding: 24px; gap: 13px; }
-      .shop { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
-      .shop-heading, .shop-subtitle, .shop-note { grid-column: 1 / -1; }
-      .shop-subtitle { margin-bottom: 7px; }
-      .upgrade { margin-top: 10px; }
       .header-right { gap: 12px; }
       .save-status { font-size: 10px; }
     }
@@ -251,11 +180,7 @@
       h1, .header-tagline h1 { font-size: 26px; letter-spacing: -1.2px; }
       .eyebrow { font-size: 8px; letter-spacing: 1.5px; }
       .subtitle, .header-tagline .subtitle { font-size: 11px; }
-      .stat, .stat.wallet { min-width: 0; padding: 12px; }
       header { column-gap: 8px; }
-      .intro .stats { display: grid; grid-template-columns: 1fr 1fr; }
-      .intro .stat.wallet { grid-column: 1 / -1; }
-      .stat-value { font-size: 21px; }
       .stat-label { font-size: 8px; letter-spacing: .8px; }
       .play-toolbar { padding: 16px; }
       .tiny-tag { display: none; }
@@ -267,19 +192,10 @@
       .hint { max-width: 145px; font-size: 10px; }
       .refresh { padding: 10px 11px; font-size: 10px; }
       .under-board { gap: 12px; font-size: 9px; }
-      .shop { padding: 19px 14px; column-gap: 9px; }
-      .upgrade { padding: 12px 10px; }
-      .upgrade-top { gap: 7px; }
-      .upgrade-name { font-size: 11px; }
-      .upgrade-icon { width: 29px; height: 32px; border-radius: 8px; }
-      .upgrade-desc { min-height: 32px; font-size: 10px; }
       .effects-toolbar { padding: 0 14px 13px; gap: 7px; }
-      .burst-option { padding: 7px 8px; font-size: 9px; }
       .renderer-status { font-size: 7px; letter-spacing: .5px; }
       footer { font-size: 9px; }
     }
-    .rebirth-store-link { width: 100%; margin-top: 8px; padding: 10px; border: 1px dashed #b9a6e4; border-radius: 8px; background: #ffffffa0; color: #6a4fa8; font-size: 11px; font-weight: 650; }
-    .rebirth-store-link:hover { background: white; }
     .rebirth-points-preview { margin-top: 8px; padding: 10px; text-align: center; border-radius: 12px; background: linear-gradient(135deg, #7c5ce0, #b35fd6); color: white; font-size: 15px; font-weight: 700; }
     .rebirth-store { width: min(1080px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto; padding: 28px; overflow: auto; overscroll-behavior: contain; background: white; border: 1px solid var(--line); border-radius: var(--radius); }
     .rebirth-store[open] { animation: store-in .22s ease-out; }
@@ -398,7 +314,6 @@
       .parade-pet { font-size: 24px; }
     }
     html[data-dark="true"] .rebirth-store { background: #1c1b28; }
-    html[data-dark="true"] .rebirth-store-link { background: #ffffff0a; border-color: #5a4a8e; color: #cdbbff; }
     html[data-dark="true"] .egg-card { border-color: #2e2c40; background: linear-gradient(180deg, color-mix(in srgb, var(--egg-tint) 14%, #1c1b28), #1c1b28 72%); }
     html[data-dark="true"] .hatch-button:disabled { background: #2a2838; color: #77748a; }
     html[data-dark="true"] .equip-best { background: #2e2750; border-color: #4a3f78; color: #d0bfff; }
@@ -412,12 +327,8 @@
     html[data-dark="true"] .pet-card.unknown .pet-emoji { filter: brightness(0) invert(1) opacity(.12); }
     html[data-dark="true"] .hatch-flash { background: radial-gradient(circle, #ffffffb0 0, #ffffff00 60%); }
     .touch-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; padding: 0 23px 15px; }
-    .segmented { display: flex; gap: 2px; padding: 3px; border: 1px solid #e9e6f0; border-radius: 30px; background: #f8f7fb; }
-    .seg { display: flex; align-items: center; gap: 4px; padding: 5px 10px; border: 0; border-radius: 30px; background: transparent; font-size: 10px; color: var(--muted); transition: background .2s, color .2s; }
-    .seg[aria-pressed="true"] { background: white; color: #5e479b; font-weight: 650; box-shadow: 0 2px 5px #35215313; }
     .seg-icon { font-size: 11px; line-height: 1; }
     .touch-row .sound-themes-label + .segmented { margin-right: 6px; }
-    .zen-toggle[aria-pressed="true"] { color: #2f5e4a; border-color: #8fcdb0; background: #e8f6ef; }
     .zen-toggle[aria-pressed="true"] .switch { background: #4fae86; }
     .trail-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
     .trail-canvas[data-layer="under"] { z-index: 1; }
@@ -431,15 +342,11 @@
     html.zen .combo { display: none; }
     html.zen .reward { display: none; }
     html.zen .board-wrap { box-shadow: 0 0 0 4px #bfe7d433, 0 10px 40px -12px #4fae8640; transition: box-shadow 1s; }
-    html[data-dark="true"] .segmented { background: #232133; border-color: #34314a; }
-    html[data-dark="true"] .seg[aria-pressed="true"] { background: #34304d; color: #d3c8ff; box-shadow: none; }
-    html[data-dark="true"] .zen-toggle[aria-pressed="true"] { color: #bff0d8; background: #17352a; border-color: #3f8a69; }
     html[data-dark="true"] .zen-toggle[aria-pressed="true"] .switch { background: #4fae86; }
     html[data-dark="true"] .breathe { color: #8fdcb8; }
     html[data-dark="true"] .breathe-orb::before { border-color: #3f8a69; }
     @media (max-width: 600px) {
       .touch-row { padding: 0 14px 13px; gap: 6px; }
-      .seg { padding: 5px 8px; font-size: 9px; }
       .touch-row .sound-themes-label + .segmented { margin-right: 0; }
       .breathe-text { min-width: 0; }
     }
@@ -447,24 +354,11 @@
     html.calm .particle, html.calm .reward, html.calm .pop-ring { display: none; }
     :root { --glass: #f7f7f2d4; --glass-line: #ffffffa0; --chip: #ffffffe0; --chip-on: #efeafc; }
     html[data-dark="true"] { color-scheme: dark; --paper: #13121b; --ink: #ecebf5; --muted: #9b99ae; --line: #2c2a3d; --purple: #a493f5; --glass: #15141ecc; --glass-line: #ffffff16; --chip: #1f1d2ce6; --chip-on: #2e2750; }
-    html[data-dark="true"] .stat { background: #1d1c2a99; }
-    html[data-dark="true"] .stat.wallet { background: var(--lime); color: #25263c; }
-    html[data-dark="true"] .stat-label { color: var(--muted); }
-    html[data-dark="true"] .rebirth-stat-track { background: #2f2b40; }
-    html[data-dark="true"] .rebirth-stat-track > div { background: #a493f5; }
-    html[data-dark="true"] .rebirth-stat.ready { background: #6a52b8; border-color: #8c76e0; }
-    html[data-dark="true"] .rebirth-stat.ready .stat-label { color: #ffffffd0; }
-    html[data-dark="true"] .wallet .stat-label { color: #586a34; }
-    html[data-dark="true"] .play-card, html[data-dark="true"] .shop, html[data-dark="true"] dialog { background: #1c1b28; }
+    html[data-dark="true"] .play-card, html[data-dark="true"] dialog { background: #1c1b28; }
     html[data-dark="true"] dialog { border-color: #34304a; }
     html[data-dark="true"] .combo-track, html[data-dark="true"] .progress-track { background: #2c2a40; }
-    html[data-dark="true"] .burst-options { background: #232133; border-color: #34314a; }
-    html[data-dark="true"] .burst-option[aria-pressed="true"] { background: #34304d; color: #d3c8ff; box-shadow: none; }
-    html[data-dark="true"] .sound-theme, html[data-dark="true"] .music-toggle { background: #232133; border-color: #34314a; color: #aaa7bd; }
-    html[data-dark="true"] .sound-theme[aria-pressed="true"] { color: var(--ink); border-color: var(--theme-color); background: color-mix(in srgb, var(--theme-color) 26%, #1c1b28); }
     html[data-dark="true"] .sound-theme .theme-dot { box-shadow: 0 0 0 2px #ffffff14; }
     html[data-dark="true"] .music-toggle .switch { background: #3a3750; }
-    html[data-dark="true"] .music-toggle[aria-pressed="true"] { color: var(--ink); background: #2e2750; border-color: #6f5cc8; }
     html[data-dark="true"] .music-toggle[aria-pressed="true"] .switch { background: #7c5ce0; }
     html[data-dark="true"] .board-wrap { background: #232136; border-color: #34314b; }
     html[data-dark="true"] .board-wrap[data-burst="water"] { background: #14283a; border-color: #20405a; }
@@ -475,19 +369,6 @@
     html[data-dark="true"] .refresh:hover { background: #cfcde0; }
     html[data-dark="true"] .under-board { color: #8a889c; }
     html[data-dark="true"] .under-board b { color: #c3c1d4; }
-    html[data-dark="true"] .upgrade { border-color: #2e2c40; }
-    html[data-dark="true"] .icon-purple { background: #2d2645; color: #b49dff; }
-    html[data-dark="true"] .icon-orange { background: #3a2a1e; color: #f0a36f; }
-    html[data-dark="true"] .icon-green { background: #223021; color: #9fcb7e; }
-    html[data-dark="true"] .icon-gold { background: #353019; color: #e2c35c; }
-    html[data-dark="true"] .level, html[data-dark="true"] .shop-note { color: #8d8aa0; }
-    html[data-dark="true"] .buy { color: #25263c; }
-    html[data-dark="true"] .buy:disabled { background: #2a2838; color: #77748a; }
-    html[data-dark="true"] .rebirth-card { background: linear-gradient(135deg, #272043, #1e1b30); border-color: #3a3256; }
-    html[data-dark="true"] .boost-badge { background: #3a2f5c; color: #d0bfff; }
-    html[data-dark="true"] .rebirth-card p, html[data-dark="true"] .rebirth-goal { color: #a49dbb; }
-    html[data-dark="true"] .rebirth-meter { background: #2f2a45; }
-    html[data-dark="true"] .rebirth-button:disabled { background: #2f2b40; color: #6f6a85; }
     html[data-dark="true"] .rebirth-preview { background: #2d2645; color: #d0bfff; }
     html[data-dark="true"] .dialog-actions button { background: #262435; }
     html[data-dark="true"] .dialog-actions .confirm-rebirth { background: #7860b1; }
@@ -502,50 +383,146 @@
     .scene-veil { background: #f7f7f22a; }
     html[data-dark="true"] .scene-veil { background: #0a0a1230; }
     .shell { position: relative; z-index: 1; }
-    .scene-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; width: fit-content; max-width: 100%; margin-bottom: 20px; padding: 5px; border: 1px solid var(--glass-line); border-radius: 30px; background: var(--glass); }
     .scene-bar-label { font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); margin: 0 4px 0 8px; }
-    .scene-option { display: flex; align-items: center; gap: 6px; padding: 7px 13px; border: 1px solid var(--line); border-radius: 30px; background: var(--chip); font-size: 11px; color: var(--muted); transition: transform .15s, border-color .15s, background .15s; }
-    .scene-option:hover { transform: translateY(-1px); }
-    .scene-option[aria-pressed="true"] { color: var(--ink); font-weight: 650; border-color: var(--purple); background: var(--chip-on); }
     .scene-emoji { font-size: 13px; line-height: 1; }
     .scene-lock { font-size: 9px; font-weight: 700; color: var(--muted); }
     .scene-lock:empty { display: none; }
-    .scene-option.locked { opacity: .62; border-style: dashed; }
+    /* ---------- Clash-style layout: one centered column ---------- */
+    .layout, .intro { max-width: 920px; margin-left: auto; margin-right: auto; }
+    .play-card { border-width: 2px; box-shadow: 0 6px 0 #d9d4ea, 0 24px 50px -28px #2a1d5a66; }
+    html[data-dark="true"] .play-card { box-shadow: 0 6px 0 #0c0b14, 0 24px 50px -28px #000; }
+
+    /* Top resource bars */
+    .intro { display: block; margin-bottom: 26px; }
+    .stats { display: flex; gap: 14px 30px; padding-left: 20px; }
+    .stat { position: relative; flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; min-height: 56px; padding: 7px 14px 7px 32px; border: 2px solid #121a36; border-radius: 14px; background: linear-gradient(180deg, #34477f, #24335f 55%, #1d2a50); box-shadow: inset 0 2px 0 #ffffff2e, inset 0 -3px 0 #00000030, 0 4px 0 #121a36, 0 12px 20px -10px #121a3699; color: #fff; text-align: left; font: inherit; }
+    .intro .stat-label { margin: 0 0 1px; font-size: 9px; font-weight: 800; letter-spacing: 1px; color: #a9b8ea; }
+    .intro .stat-value { font-size: 24px; font-weight: 900; letter-spacing: -.3px; line-height: 1.05; color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 2px 0 #0b1330, 1px 0 0 #0b1330, -1px 0 0 #0b1330, 0 -1px 0 #0b1330; }
+    .intro .wallet .stat-value { color: #ffe066; }
+    .stat-icon { position: absolute; left: -22px; top: 50%; width: 46px; height: 46px; transform: translateY(-50%); display: grid; place-items: center; border-radius: 50%; font-size: 20px; font-weight: 900; }
+    .coin-big { color: #7a4c08; background: radial-gradient(circle at 35% 30%, #fff6b8 0 12%, #ffd84a 38%, #f0a92a 75%, #c47a12); border: 2px solid #7a4c08; box-shadow: inset 0 0 0 4px #ffe58a80, inset 0 -3px 0 #b8741066, 0 3px 0 #121a36; text-shadow: 0 1px 0 #fff4c0; }
+    .bubble-big { background: radial-gradient(circle at 34% 28%, #fff 0 10%, #e7e2ff 22%, #b6a6f0 62%, #7f68d0); border: 2px solid #3d2c86; box-shadow: inset 0 -3px 4px #5b46b066, 0 3px 0 #121a36; }
+    .bubble-big::after { content: ""; position: absolute; left: 10px; top: 9px; width: 13px; height: 7px; border-radius: 50%; background: #fff; transform: rotate(-35deg); opacity: .9; }
+    .star-big { color: #fff; font-size: 22px; background: radial-gradient(circle at 35% 30%, #e6d4ff 0 10%, #b07cff 40%, #7a3fe0 80%); border: 2px solid #3a1878; box-shadow: inset 0 -3px 0 #3a187855, 0 3px 0 #121a36; text-shadow: 0 2px 0 #3a1878; }
+    .rebirth-stat { cursor: pointer; transition: transform .15s, filter .15s; }
+    .rebirth-stat:hover { transform: translateY(-2px); filter: brightness(1.1); }
+    .rebirth-stat:active { transform: translateY(3px); box-shadow: inset 0 2px 0 #ffffff2e, 0 1px 0 #121a36; }
+    .rebirth-stat-track { height: 8px; margin-top: 4px; border-radius: 6px; background: #0d1533; box-shadow: inset 0 1px 2px #000a; overflow: hidden; }
+    .rebirth-stat-track > div { height: 100%; width: 0; border-radius: inherit; background: linear-gradient(#d8b6ff, #9b5cf5); transition: width .3s; }
+    .rebirth-stat.ready { border-color: #2e1366; background: linear-gradient(180deg, #a56cff, #7a3fe0 60%, #6430c4); box-shadow: inset 0 2px 0 #ffffff50, 0 4px 0 #2e1366; animation: rebirth-glow 1.6s ease-in-out infinite; }
+    .intro .rebirth-stat.ready .stat-label { color: #f0e4ff; }
+    .rebirth-stat.ready .rebirth-stat-track > div { background: linear-gradient(#fff4a8, #ffc93a); }
+    @keyframes rebirth-glow { 50% { box-shadow: inset 0 2px 0 #ffffff50, 0 4px 0 #2e1366, 0 0 0 6px #a56cff40, 0 0 24px #a56cff99; } }
+    html[data-dark="true"] .stat-label { color: var(--muted); }
+
+    /* Chunky game buttons above the bubbles */
+    .scene-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; width: fit-content; max-width: 100%; margin: 0 auto 26px; padding: 6px; border: 2px solid #121a36; border-radius: 16px; background: linear-gradient(#2f427a, #1d2a50); box-shadow: inset 0 2px 0 #ffffff24, 0 4px 0 #121a36; }
+    .scene-bar .scene-bar-label { color: #a9b8ea; }
+    .scene-option, .burst-option, .sound-theme, .seg, .music-toggle { display: flex; align-items: center; gap: 6px; padding: 7px 12px; border: 2px solid #c3cbe0; border-radius: 11px; background: linear-gradient(180deg, #fff, #e8edf7); box-shadow: inset 0 -2px 0 #d6dceb, 0 3px 0 #b3bcd4; color: #39446a; font: inherit; font-size: 10.5px; font-weight: 750; cursor: pointer; transition: transform .1s, box-shadow .1s, filter .15s; }
+    .scene-option:hover, .burst-option:hover, .sound-theme:hover, .seg:hover, .music-toggle:hover { transform: translateY(-1px); filter: brightness(1.04); }
+    .scene-option:active, .burst-option:active, .sound-theme:active, .seg:active, .music-toggle:active { transform: translateY(2px); box-shadow: 0 1px 0 #b3bcd4; }
+    .scene-option[aria-pressed="true"], .burst-option[aria-pressed="true"], .seg[aria-pressed="true"], .music-toggle[aria-pressed="true"] { color: #fff; border-color: #1a56a8; background: linear-gradient(180deg, #7fd3ff, #3b9bf0 55%, #2a7fdc); box-shadow: inset 0 2px 0 #ffffff70, inset 0 -2px 0 #1f66c0, 0 3px 0 #1a4f9a; text-shadow: 0 1px 0 #0d3b7a, 0 0 1px #0d3b7a; }
+    .sound-theme[aria-pressed="true"] { color: #fff; border-color: color-mix(in srgb, var(--theme-color) 55%, #000); background: linear-gradient(180deg, color-mix(in srgb, var(--theme-color) 45%, #fff), var(--theme-color)); box-shadow: inset 0 2px 0 #ffffff70, 0 3px 0 color-mix(in srgb, var(--theme-color) 50%, #000); text-shadow: 0 1px 0 #0006; }
+    .zen-toggle[aria-pressed="true"] { border-color: #2a7a1c; background: linear-gradient(180deg, #9cf07a, #52c43a 55%, #3aa82a); box-shadow: inset 0 2px 0 #ffffff70, 0 3px 0 #1d5e13; text-shadow: 0 1px 0 #1d5e13; }
+    .scene-option.locked { opacity: .7; filter: saturate(.4); }
     .scene-option.locked:hover { transform: none; }
-    .world-shop { margin-top: 18px; padding: 12px; border: 1px solid var(--line); border-radius: 15px; background: var(--world-tint, #f6f4fb); }
-    .world-shop[data-world="ocean"] { --world-tint: #eaf6fb; --world-ink: #2a7fae; }
-    .world-shop[data-world="woods"] { --world-tint: #eef6e6; --world-ink: #4f8a3a; }
-    .world-shop[data-world="tower"] { --world-tint: #f2eef9; --world-ink: #7a5fb8; }
-    html[data-dark="true"] .world-shop { --world-tint: #1f1e2c; }
-    .world-shop-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; font-weight: 700; color: var(--world-ink, var(--ink)); }
-    .world-shop-note { font-size: 9.5px; font-weight: 600; color: var(--muted); }
-    .world-go { padding: 4px 10px; border: 1px solid var(--world-ink); border-radius: 20px; background: transparent; color: var(--world-ink); font-size: 10px; font-weight: 700; }
-    .world-go:hover { background: color-mix(in srgb, var(--world-ink) 12%, transparent); }
+    .sound-themes .music-toggle { margin-left: auto; }
+    .burst-options, .segmented { display: flex; flex-wrap: wrap; gap: 6px; }
+    .burst-option[aria-pressed="true"] .epic-tag { color: #ffe066; }
+    html[data-dark="true"] .scene-option:not([aria-pressed="true"]), html[data-dark="true"] .burst-option:not([aria-pressed="true"]), html[data-dark="true"] .sound-theme:not([aria-pressed="true"]), html[data-dark="true"] .seg:not([aria-pressed="true"]), html[data-dark="true"] .music-toggle:not([aria-pressed="true"]) { color: #c9cfe6; border-color: #0f1430; background: linear-gradient(180deg, #363b5e, #262a45); box-shadow: inset 0 -2px 0 #1d2140, 0 3px 0 #0b0f24; }
+
+    /* Upgrade deck */
+    .deck { margin-top: 26px; padding: 18px 18px 16px; border: 2px solid #121a36; border-radius: 24px; background: radial-gradient(120% 70% at 50% 0%, #4061ac, #2a3d74 45%, #1e2b55); box-shadow: inset 0 2px 0 #ffffff26, inset 0 0 0 4px #ffffff0a, 0 6px 0 #121a36, 0 24px 50px -24px #121a3699; color: #fff; }
+    html[data-dark="true"] .deck { background: radial-gradient(120% 70% at 50% 0%, #2f4583, #1f2c56 45%, #151d3c); }
+    .deck-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 12px; margin-bottom: 18px; text-align: center; }
+    .deck-head h2 { font-size: 22px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; color: #fff; text-shadow: 0 3px 0 #0b1330, 2px 0 0 #0b1330, -2px 0 0 #0b1330, 0 -2px 0 #0b1330, 2px 2px 0 #0b1330, -2px 2px 0 #0b1330; }
+    .deck-sub { margin: 0; font-size: 11px; font-weight: 700; color: #a9b8ea; }
+    .deck-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 20px 14px; padding-top: 6px; }
+    .shop-note { margin: 16px 0 0; text-align: center; font-size: 10px; font-weight: 600; color: #8f9ed0; }
+    .upgrade { --r1: #8ccdff; --r2: #3480e0; --r3: #173f86; position: relative; flex: 0 0 150px; display: flex; flex-direction: column; min-width: 0; padding: 12px 6px 8px; border: 2px solid var(--r3); border-radius: 14px; background: linear-gradient(180deg, var(--r1), var(--r2)); box-shadow: inset 0 2px 0 #ffffff66, inset 0 -3px 0 #00000026, 0 5px 0 var(--r3), 0 14px 22px -10px #000a; transition: transform .15s; }
+    .upgrade:hover { transform: translateY(-3px); }
+    .upgrade[data-rarity="rare"] { --r1: #ffc56b; --r2: #f0841f; --r3: #8a420a; }
+    .upgrade[data-rarity="epic"] { --r1: #d59bff; --r2: #9447e8; --r3: #4a1a8c; }
+    .upgrade[data-rarity="legendary"] { --r1: #fff09a; --r2: #f0b429; --r3: #8a5a06; background: linear-gradient(160deg, #fff3a0, #f5c33b 35%, #ffa7d8 62%, #8fdcff 85%, #f0b429); }
+    .upgrade[data-rarity="ocean"] { --r1: #7ee6f7; --r2: #1fa3cf; --r3: #0b5674; }
+    .upgrade[data-rarity="woods"] { --r1: #a6ec7c; --r2: #4cae32; --r3: #1f5e14; }
+    .upgrade[data-rarity="tower"] { --r1: #c9b4ff; --r2: #7457d8; --r3: #332079; }
+    .upgrade::before { content: attr(data-tag); position: absolute; top: -11px; left: 50%; z-index: 2; transform: translateX(-50%); padding: 2px 9px; border: 2px solid var(--r3); border-radius: 8px; background: linear-gradient(var(--r1), var(--r2)); color: #fff; font-size: 8.5px; font-weight: 900; letter-spacing: .8px; text-transform: uppercase; white-space: nowrap; text-shadow: 0 1px 0 var(--r3), 0 0 2px var(--r3); }
+    .card-art { position: relative; display: grid; place-items: center; height: 104px; margin-bottom: 15px; border: 2px solid var(--r3); border-radius: 10px; background: radial-gradient(circle at 50% 38%, #ffffffcc, #ffffff40 28%, transparent 60%), linear-gradient(180deg, color-mix(in srgb, var(--r1) 70%, #fff), var(--r2)); box-shadow: inset 0 -10px 18px #00000030, inset 0 3px 0 #ffffff80; }
+    .card-art::before { content: ""; position: absolute; inset: 0; border-radius: 8px; background: linear-gradient(115deg, transparent 30%, #ffffff50 45%, transparent 60%); pointer-events: none; }
+    .card-art svg { width: 56px; height: 56px; color: #fff; stroke-width: 2.2; filter: drop-shadow(0 3px 0 var(--r3)) drop-shadow(0 0 1px var(--r3)); }
+    .card-emoji { font-size: 54px; line-height: 1; filter: drop-shadow(0 4px 0 #00000040); }
+    .upgrade .level { position: absolute; bottom: -12px; left: 50%; z-index: 1; transform: translateX(-50%); padding: 3px 9px; border: 2px solid var(--r3); border-radius: 8px; background: #1b2449; box-shadow: 0 2px 0 var(--r3); color: #fff; font-size: 9px; font-weight: 900; letter-spacing: .5px; white-space: nowrap; }
+    .card-art .auto-toggle { position: absolute; top: 5px; right: 5px; z-index: 2; margin: 0; padding: 3px 7px 3px 4px; border-radius: 9px; font-size: 9px; }
+    .upgrade-name { margin: 2px 0 4px; text-align: center; font-size: 13.5px; font-weight: 900; line-height: 1.15; color: #fff; text-shadow: 0 2px 0 var(--r3), 1px 0 0 var(--r3), -1px 0 0 var(--r3), 0 -1px 0 var(--r3), 1px 1px 0 var(--r3), -1px 1px 0 var(--r3); }
+    .upgrade-desc { flex: 1; min-height: 40px; margin: 0 2px 8px; padding: 5px 6px; border-radius: 8px; background: #0000002e; text-align: center; font-size: 9.5px; font-weight: 650; line-height: 1.35; color: #fff; }
+    .card-bar { height: 12px; margin: 0 2px 8px; border: 2px solid #0d1533; border-radius: 7px; background: #0d1533; overflow: hidden; }
+    .card-bar i { display: block; width: 0; height: 100%; border-radius: 5px; background: linear-gradient(#8ad8ff, #2e8be0); box-shadow: inset 0 2px 0 #ffffff60; transition: width .3s; }
+    .upgrade.ready .card-bar i { background: linear-gradient(#b5f58a, #46b52c); }
+    .upgrade.maxed .card-bar i { background: linear-gradient(#fff3a0, #f0b429); }
+    .buy { display: flex; align-items: center; justify-content: space-between; gap: 6px; width: 100%; padding: 7px 9px; border: 2px solid #1d5e13; border-radius: 10px; background: linear-gradient(180deg, #9cf07a, #52c43a 55%, #3aa82a); box-shadow: inset 0 2px 0 #ffffff80, inset 0 -2px 0 #2b8a1f, 0 3px 0 #1d5e13; color: #fff; font: inherit; font-size: 11px; font-weight: 900; text-shadow: 0 1px 0 #1d5e13, 0 0 2px #1d5e13; cursor: pointer; transition: transform .1s, box-shadow .1s, filter .15s; }
+    .buy:not(:disabled):hover { filter: brightness(1.08); }
+    .buy:not(:disabled):active { transform: translateY(2px); box-shadow: inset 0 2px 0 #ffffff80, 0 1px 0 #1d5e13; }
+    .buy:disabled { cursor: default; border-color: #4a5170; background: linear-gradient(180deg, #c3c9da, #969db4); box-shadow: inset 0 2px 0 #ffffff60, 0 3px 0 #4a5170; text-shadow: 0 1px 0 #4a5170; }
+    .buy .price { display: flex; align-items: center; gap: 4px; }
+    .mini-coin { display: inline-grid; place-items: center; width: 14px; height: 14px; border: 1.5px solid #7a4c08; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff6b8, #ffd84a 45%, #e0961c); color: #7a4c08; font-size: 8px; font-weight: 900; font-style: normal; text-shadow: none; }
+    .upgrade.maxed .buy { justify-content: center; border-color: #8a5a06; background: linear-gradient(180deg, #fff09a, #f0b429); box-shadow: inset 0 2px 0 #ffffffa0, 0 3px 0 #8a5a06; text-shadow: 0 1px 0 #8a5a06; }
+    .upgrade.maxed .price { display: none; }
+    .upgrade.ready::after { content: "\25B2"; position: absolute; top: -12px; right: -9px; z-index: 3; display: grid; place-items: center; width: 24px; height: 24px; border: 2px solid #1d5e13; border-radius: 50%; background: linear-gradient(#9cf07a, #3aa82a); box-shadow: 0 2px 0 #1d5e13; color: #fff; font-size: 10px; text-shadow: 0 1px 0 #1d5e13; animation: ready-bob 1s ease-in-out infinite; }
+    @keyframes ready-bob { 50% { transform: translateY(-3px); } }
+
+    /* World cards sit in the same row; their heading spans the row */
+    .world-shop { display: contents; }
+    .world-shop-head { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 10px; margin-bottom: -4px; font-size: 13px; font-weight: 900; color: #fff; text-shadow: 0 2px 0 #0b1330; }
+    .world-shop-note { font-size: 10px; font-weight: 700; color: #a9b8ea; text-shadow: none; }
+    .world-go { padding: 4px 10px; border: 2px solid #1d5e13; border-radius: 9px; background: linear-gradient(#9cf07a, #3aa82a); box-shadow: 0 2px 0 #1d5e13; color: #fff; font-size: 10px; font-weight: 900; text-shadow: 0 1px 0 #1d5e13; }
     .world-go[hidden] { display: none; }
     .world-shop.locked .upgrade { display: none; }
-    .world-shop.locked { opacity: .75; border-style: dashed; }
-    .world-shop .upgrade { background: var(--card, #fff); }
-    html[data-dark="true"] .world-shop .upgrade { background: #1c1b28; }
     /* Each area only shows its own upgrades: Plain shows the originals, a world shows just its two. */
-    html[data-scene]:not([data-scene="plain"]) .shop > .upgrade,
+    html[data-scene]:not([data-scene="plain"]) .deck-row > .upgrade,
     html[data-scene="plain"] .world-shop,
     html[data-scene="ocean"] .world-shop:not([data-world="ocean"]),
     html[data-scene="woods"] .world-shop:not([data-world="woods"]),
     html[data-scene="tower"] .world-shop:not([data-world="tower"]) { display: none; }
-    html[data-scene]:not([data-scene="plain"]) .world-shop { margin-top: 4px; }
-    @media (max-width: 780px) {
-      .world-shop { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 9px; }
-      .world-shop-head { grid-column: 1 / -1; }
-      .shop > *, .world-shop > * { min-width: 0; }
+
+    /* Rebirth: the special card at the end of the row */
+    .rebirth-card { position: relative; flex: 0 0 214px; display: flex; flex-direction: column; padding: 14px 10px 10px; border: 2px solid #2e1366; border-radius: 14px; background: radial-gradient(circle at 50% 0%, #d3b0ff66, transparent 60%), linear-gradient(180deg, #8c55f0, #5f2fc0 70%, #4b2299); box-shadow: inset 0 2px 0 #ffffff55, 0 5px 0 #2e1366, 0 14px 22px -10px #000a; color: #fff; }
+    .rebirth-card::before { content: "\2605  Special"; position: absolute; top: -11px; left: 50%; transform: translateX(-50%); padding: 2px 9px; border: 2px solid #8a5a06; border-radius: 8px; background: linear-gradient(#fff09a, #f0b429); color: #fff; font-size: 8.5px; font-weight: 900; letter-spacing: .8px; text-transform: uppercase; white-space: nowrap; text-shadow: 0 1px 0 #8a5a06, 0 0 2px #8a5a06; }
+    .rebirth-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .rebirth-top h3 { margin: 0; font-size: 15px; font-weight: 900; text-shadow: 0 2px 0 #2e1366, 1px 0 0 #2e1366, -1px 0 0 #2e1366; }
+    .boost-badge { padding: 3px 7px; border: 2px solid #8a5a06; border-radius: 8px; background: linear-gradient(#fff09a, #f0b429); color: #5a3a02; font-size: 9px; font-weight: 900; white-space: nowrap; }
+    .rebirth-card p { flex: 1; margin: 9px 0; padding: 6px 7px; border-radius: 8px; background: #0000002e; color: #fff; font-size: 9.5px; font-weight: 600; line-height: 1.4; }
+    .rebirth-goal { display: flex; justify-content: space-between; gap: 6px; margin-bottom: 5px; color: #e6d8ff; font-size: 9px; font-weight: 800; }
+    .rebirth-meter { height: 12px; margin-bottom: 10px; border: 2px solid #1a0b40; border-radius: 7px; background: #1a0b40; overflow: hidden; }
+    .rebirth-meter div { width: 0; height: 100%; border-radius: 5px; background: linear-gradient(#fff3a0, #f0b429); box-shadow: inset 0 2px 0 #ffffff80; transition: width .3s; }
+    .rebirth-button, .rebirth-store-link { width: 100%; padding: 8px; border: 2px solid #8a4a00; border-radius: 10px; background: linear-gradient(180deg, #ffe066, #ffb020 55%, #f59a0c); box-shadow: inset 0 2px 0 #ffffff90, 0 3px 0 #8a4a00; color: #fff; font: inherit; font-size: 12px; font-weight: 900; text-shadow: 0 1px 0 #8a4a00, 0 0 2px #8a4a00; cursor: pointer; transition: transform .1s, box-shadow .1s, filter .15s; }
+    .rebirth-store-link { margin-top: 8px; font-size: 11px; border-color: #1a4f9a; background: linear-gradient(180deg, #7fd3ff, #3b9bf0 55%, #2a7fdc); box-shadow: inset 0 2px 0 #ffffff70, 0 3px 0 #1a4f9a; text-shadow: 0 1px 0 #0d3b7a, 0 0 2px #0d3b7a; }
+    .rebirth-button:not(:disabled):hover, .rebirth-store-link:hover { filter: brightness(1.08); }
+    .rebirth-button:not(:disabled):active, .rebirth-store-link:active { transform: translateY(2px); box-shadow: 0 1px 0 #1a0b40; }
+    .rebirth-button:disabled { cursor: default; border-color: #4a5170; background: linear-gradient(180deg, #c3c9da, #969db4); box-shadow: inset 0 2px 0 #ffffff60, 0 3px 0 #4a5170; text-shadow: 0 1px 0 #4a5170; }
+
+    @media (max-width: 600px) {
+      .scene-option, .burst-option, .sound-theme, .seg, .music-toggle { padding: 6px 8px; font-size: 9.5px; border-radius: 10px; }
+      .deck { margin-top: 20px; padding: 14px 0 12px; border-radius: 20px; }
+      .deck-head { margin-bottom: 4px; padding: 0 14px; }
+      .deck-row { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding: 18px 14px 12px; scroll-snap-type: x mandatory; scroll-padding: 0 14px; scrollbar-width: none; }
+      .deck-row::-webkit-scrollbar { display: none; }
+      .upgrade { flex: 0 0 140px; scroll-snap-align: start; }
+      .rebirth-card { flex: 0 0 196px; scroll-snap-align: start; }
+      .world-shop-head { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+      .shop-note { padding: 0 14px; }
     }
     @media (max-width: 480px) {
-      .world-shop { padding: 9px; column-gap: 7px; }
-      .world-shop .buy { flex-wrap: wrap; justify-content: center; gap: 3px 6px; text-align: center; }
+      .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 30px; padding-left: 22px; }
+      .intro .wallet { grid-column: 1 / -1; }
+      .stat { min-height: 50px; padding: 6px 10px 6px 28px; }
+      .stat-icon { left: -20px; width: 40px; height: 40px; font-size: 17px; }
+      .intro .stat-value { font-size: 19px; }
+      .intro .stat-label { font-size: 8px; letter-spacing: .6px; }
+      .scene-bar { margin-bottom: 20px; }
     }
-    .upgrade-icon.emoji-icon { font-size: 18px; background: color-mix(in srgb, var(--world-ink) 14%, transparent); }
-    html.scenic header, html.scenic .intro, html.scenic footer { background: var(--glass); border: 1px solid var(--glass-line); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
-    html.scenic header { margin-top: 14px; padding: 14px 22px; border-radius: 18px; }
-    html.scenic .intro { padding: 24px 28px; border-radius: 22px; }
+    html.scenic header, html.scenic footer { background: var(--glass); border: 1px solid var(--glass-line); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+    html.scenic header { margin-top: 14px; padding: 14px 22px; border-radius: 18px; }
     html.scenic footer { padding: 16px 22px; border-radius: 16px; margin-bottom: 18px; }
     html.scenic .under-board { flex-wrap: wrap; width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; padding: 8px 18px; border: 1px solid var(--glass-line); border-radius: 30px; background: var(--glass); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: var(--muted); }
     @media (max-width: 360px) {
@@ -554,9 +531,7 @@
       #save-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     }
     @media (max-width: 480px) {
-      html.scenic header { padding: 12px; margin-top: 10px; }
-      html.scenic .intro { padding: 16px; }
-      .scene-option { padding: 6px 9px; font-size: 10px; }
+      html.scenic header { padding: 12px; margin-top: 10px; }
       .scene-bar-label { margin-left: 5px; }
     }
   </style>
@@ -598,15 +573,18 @@
       <section class="intro" aria-label="Your stats">
         <div class="stats">
           <div class="stat wallet">
-            <span class="stat-label">Your pop coins</span>
-            <div class="stat-value"><span class="coin-icon" aria-hidden="true">P</span><span id="coins">0</span></div>
+            <span class="stat-icon coin-big" aria-hidden="true">P</span>
+            <span class="stat-label">Pop coins</span>
+            <div class="stat-value" id="coins">0</div>
           </div>
-          <div class="stat">
+          <div class="stat popped-stat">
+            <span class="stat-icon bubble-big" aria-hidden="true"></span>
             <span class="stat-label">Bubbles popped</span>
             <div class="stat-value" id="total">0</div>
           </div>
           <button class="stat rebirth-stat" id="rebirth-stat" type="button" aria-describedby="rebirth-stat-hint">
-            <span class="stat-label">&#10022; Rebirth</span>
+            <span class="stat-icon star-big" aria-hidden="true">&#10022;</span>
+            <span class="stat-label">Rebirth</span>
             <div class="stat-value" id="rebirth-stat-value">0%</div>
             <div class="rebirth-stat-track" aria-hidden="true"><div id="rebirth-stat-fill"></div></div>
             <span class="sr-only" id="rebirth-stat-hint">Jump to rebirth</span>
@@ -682,91 +660,102 @@
             <span><b id="per-pop">1</b> coin / pop</span><span><b id="auto-rate">0</b> auto pops / sec<span id="auto-paused" hidden> (paused)</span></span><span>Golden bubbles = <b id="gold-x">5x</b></span><span id="fugue-note">&#9835; Fugue in <b id="fugue-key">D minor</b> &middot; <b id="fugue-voices">1 voice</b></span><span id="click-note" hidden>Music off &middot; pure <b id="pure-theme">honey</b> pops</span>
           </div>
         </section>
-        <aside class="shop" aria-labelledby="shop-title">
-          <div class="shop-heading"><h2>A better kind of extra.</h2><span aria-hidden="true">&#10023;</span></div>
-          <p class="shop-subtitle">Little upgrades. Big satisfaction.</p>
-          <article class="upgrade">
-            <div class="upgrade-top">
-              <div class="upgrade-icon icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9 15V8h4a2 2 0 0 1 0 4H9m3 0 3 4"/></svg></div>
-              <div><div class="upgrade-name">Pocket change</div><div class="level" id="power-level">LEVEL 0</div></div>
-            </div>
-            <p class="upgrade-desc" id="power-desc">A little more from every pop. +1 coin.</p>
-            <button class="buy" id="buy-power" data-upgrade="power" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="power-cost">20</span></span></button>
-          </article>
-          <article class="upgrade">
-            <div class="upgrade-top">
-              <div class="upgrade-icon icon-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4M5 5l3 3m8 8 3 3M5 19l3-3m8-8 3-3"/></svg></div>
-              <div><div class="upgrade-name">Wide touch</div><div class="level" id="splash-level">LEVEL 0 / 2</div></div>
-            </div>
-            <p class="upgrade-desc" id="splash-desc">Pop the 4 neighbors with every touch.</p>
-            <button class="buy" id="buy-splash" data-upgrade="splash" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="splash-cost">80</span></span></button>
-          </article>
-          <article class="upgrade">
-            <div class="upgrade-top">
-              <div class="upgrade-icon icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="4"/><path d="M12 3v4m-4 6h1m6 0h1m-7 4h6M2 11v5m20-5v5"/><circle cx="12" cy="3" r="1"/></svg></div>
-              <div><div class="upgrade-name">Auto-popper</div><div class="level" id="auto-level">LEVEL 0</div></div>
-              <button class="music-toggle auto-toggle" id="auto-toggle" aria-pressed="true" aria-label="Auto-pop" title="Turn automatic popping on or off" hidden><span class="switch" aria-hidden="true"></span><span id="auto-toggle-label">On</span></button>
-            </div>
-            <p class="upgrade-desc" id="auto-desc">A helping hand. +1 automatic pop / sec.</p>
-            <button class="buy" id="buy-auto" data-upgrade="auto" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="auto-cost">120</span></span></button>
-          </article>
-          <article class="upgrade">
-            <div class="upgrade-top">
-              <div class="upgrade-icon icon-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path d="m19 2 1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg></div>
-              <div><div class="upgrade-name">Golden touch</div><div class="level" id="luck-level">LEVEL 0 / 5</div></div>
-            </div>
-            <p class="upgrade-desc" id="luck-desc">More golden bubbles. +5% next sheet.</p>
-            <button class="buy" id="buy-luck" data-upgrade="luck" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="luck-cost">90</span></span></button>
-          </article>
-          <section class="world-shop" data-world="ocean" aria-labelledby="ocean-shop-title">
-            <div class="world-shop-head"><span id="ocean-shop-title">&#127754; Ocean upgrades</span><span class="world-shop-note" id="ocean-shop-note"></span><button class="world-go" data-go="ocean" hidden>Go there</button></div>
-            <article class="upgrade">
-              <div class="upgrade-top"><div class="upgrade-icon emoji-icon" aria-hidden="true">&#127754;</div><div><div class="upgrade-name">Tidal helper</div><div class="level" id="tide-level">LEVEL 0</div></div></div>
-              <p class="upgrade-desc" id="tide-desc"></p>
-              <button class="buy" id="buy-tide" data-upgrade="tide" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="tide-cost"></span></span></button>
+        <section class="deck" aria-labelledby="deck-title">
+          <div class="deck-head">
+            <h2 id="deck-title">Upgrades</h2>
+            <p class="deck-sub">Little upgrades. Big satisfaction.</p>
+          </div>
+          <div class="deck-row">
+            <article class="upgrade" data-rarity="common" data-tag="Common">
+              <div class="card-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9 15V8h4a2 2 0 0 1 0 4H9m3 0 3 4"/></svg><span class="level" id="power-level">Level 0</span></div>
+              <h3 class="upgrade-name">Pocket change</h3>
+              <p class="upgrade-desc" id="power-desc">A little more from every pop. +1 coin.</p>
+              <div class="card-bar" aria-hidden="true"><i id="power-bar"></i></div>
+              <button class="buy" id="buy-power" data-upgrade="power" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="power-cost"></span></span></button>
             </article>
-            <article class="upgrade">
-              <div class="upgrade-top"><div class="upgrade-icon emoji-icon" aria-hidden="true">&#129450;</div><div><div class="upgrade-name">Pearl diver</div><div class="level" id="pearl-level">LEVEL 0</div></div></div>
-              <p class="upgrade-desc" id="pearl-desc"></p>
-              <button class="buy" id="buy-pearl" data-upgrade="pearl" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="pearl-cost"></span></span></button>
+            <article class="upgrade" data-rarity="rare" data-tag="Rare">
+              <div class="card-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4M5 5l3 3m8 8 3 3M5 19l3-3m8-8 3-3"/></svg><span class="level" id="splash-level">Level 0</span></div>
+              <h3 class="upgrade-name">Wide touch</h3>
+              <p class="upgrade-desc" id="splash-desc">Pop the 4 neighbors with every touch.</p>
+              <div class="card-bar" aria-hidden="true"><i id="splash-bar"></i></div>
+              <button class="buy" id="buy-splash" data-upgrade="splash" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="splash-cost"></span></span></button>
             </article>
+            <article class="upgrade" data-rarity="epic" data-tag="Epic">
+              <div class="card-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="4"/><path d="M12 3v4m-4 6h1m6 0h1m-7 4h6M2 11v5m20-5v5"/><circle cx="12" cy="3" r="1"/></svg><span class="level" id="auto-level">Level 0</span><button class="music-toggle auto-toggle" id="auto-toggle" aria-pressed="true" aria-label="Auto-pop" title="Turn automatic popping on or off" hidden><span class="switch" aria-hidden="true"></span><span id="auto-toggle-label">On</span></button></div>
+              <h3 class="upgrade-name">Auto-popper</h3>
+              <p class="upgrade-desc" id="auto-desc">A helping hand. +1 automatic pop / sec.</p>
+              <div class="card-bar" aria-hidden="true"><i id="auto-bar"></i></div>
+              <button class="buy" id="buy-auto" data-upgrade="auto" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="auto-cost"></span></span></button>
+            </article>
+            <article class="upgrade" data-rarity="legendary" data-tag="Legendary">
+              <div class="card-art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path d="m19 2 1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg><span class="level" id="luck-level">Level 0</span></div>
+              <h3 class="upgrade-name">Golden touch</h3>
+              <p class="upgrade-desc" id="luck-desc">More golden bubbles. +5% next sheet.</p>
+              <div class="card-bar" aria-hidden="true"><i id="luck-bar"></i></div>
+              <button class="buy" id="buy-luck" data-upgrade="luck" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="luck-cost"></span></span></button>
+            </article>
+            <section class="world-shop" data-world="ocean" aria-labelledby="ocean-shop-title">
+              <div class="world-shop-head"><span id="ocean-shop-title">&#127754; Ocean upgrades</span><span class="world-shop-note" id="ocean-shop-note"></span><button class="world-go" data-go="ocean" hidden>Go there</button></div>
+              <article class="upgrade" data-rarity="ocean" data-tag="Ocean">
+                <div class="card-art"><span class="card-emoji" aria-hidden="true">&#127754;</span><span class="level" id="tide-level">Level 0</span></div>
+                <h3 class="upgrade-name">Tidal helper</h3>
+                <p class="upgrade-desc" id="tide-desc"></p>
+                <div class="card-bar" aria-hidden="true"><i id="tide-bar"></i></div>
+                <button class="buy" id="buy-tide" data-upgrade="tide" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="tide-cost"></span></span></button>
+              </article>
+              <article class="upgrade" data-rarity="ocean" data-tag="Ocean">
+                <div class="card-art"><span class="card-emoji" aria-hidden="true">&#129450;</span><span class="level" id="pearl-level">Level 0</span></div>
+                <h3 class="upgrade-name">Pearl diver</h3>
+                <p class="upgrade-desc" id="pearl-desc"></p>
+                <div class="card-bar" aria-hidden="true"><i id="pearl-bar"></i></div>
+                <button class="buy" id="buy-pearl" data-upgrade="pearl" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="pearl-cost"></span></span></button>
+              </article>
+            </section>
+            <section class="world-shop" data-world="woods" aria-labelledby="woods-shop-title">
+              <div class="world-shop-head"><span id="woods-shop-title">&#127794; Woods upgrades</span><span class="world-shop-note" id="woods-shop-note"></span><button class="world-go" data-go="woods" hidden>Go there</button></div>
+              <article class="upgrade" data-rarity="woods" data-tag="Woods">
+                <div class="card-art"><span class="card-emoji" aria-hidden="true">&#127807;</span><span class="level" id="moss-level">Level 0</span></div>
+                <h3 class="upgrade-name">Mossy cushion</h3>
+                <p class="upgrade-desc" id="moss-desc"></p>
+                <div class="card-bar" aria-hidden="true"><i id="moss-bar"></i></div>
+                <button class="buy" id="buy-moss" data-upgrade="moss" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="moss-cost"></span></span></button>
+              </article>
+              <article class="upgrade" data-rarity="woods" data-tag="Woods">
+                <div class="card-art"><span class="card-emoji" aria-hidden="true">&#10024;</span><span class="level" id="firefly-level">Level 0</span></div>
+                <h3 class="upgrade-name">Firefly glow</h3>
+                <p class="upgrade-desc" id="firefly-desc"></p>
+                <div class="card-bar" aria-hidden="true"><i id="firefly-bar"></i></div>
+                <button class="buy" id="buy-firefly" data-upgrade="firefly" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="firefly-cost"></span></span></button>
+              </article>
+            </section>
+            <section class="world-shop" data-world="tower" aria-labelledby="tower-shop-title">
+              <div class="world-shop-head"><span id="tower-shop-title">&#127984; Tower upgrades</span><span class="world-shop-note" id="tower-shop-note"></span><button class="world-go" data-go="tower" hidden>Go there</button></div>
+              <article class="upgrade" data-rarity="tower" data-tag="Tower">
+                <div class="card-art"><span class="card-emoji" aria-hidden="true">&#128276;</span><span class="level" id="bell-level">Level 0</span></div>
+                <h3 class="upgrade-name">Bell tower</h3>
+                <p class="upgrade-desc" id="bell-desc"></p>
+                <div class="card-bar" aria-hidden="true"><i id="bell-bar"></i></div>
+                <button class="buy" id="buy-bell" data-upgrade="bell" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="bell-cost"></span></span></button>
+              </article>
+              <article class="upgrade" data-rarity="tower" data-tag="Tower">
+                <div class="card-art"><span class="card-emoji" aria-hidden="true">&#129668;</span><span class="level" id="spell-level">Level 0</span></div>
+                <h3 class="upgrade-name">Echo spell</h3>
+                <p class="upgrade-desc" id="spell-desc"></p>
+                <div class="card-bar" aria-hidden="true"><i id="spell-bar"></i></div>
+                <button class="buy" id="buy-spell" data-upgrade="spell" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="spell-cost"></span></span></button>
+              </article>
+            </section>
+            <section class="rebirth-card" aria-labelledby="rebirth-title">
+              <div class="rebirth-top"><h3 id="rebirth-title">A new beginning.</h3><span class="boost-badge" id="boost-badge">1x forever boost</span></div>
+              <p>Start fresh. Come back stronger. Resets coins and upgrades for a forever +100% boost and <b>rebirth points</b> for eggs.</p>
+              <div class="rebirth-goal"><span id="rebirth-count">0 rebirths</span><span id="rebirth-cost">10,000 coins</span></div>
+                <div class="rebirth-meter" role="progressbar" aria-label="Coins toward rebirth" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="0" id="rebirth-progress"><div id="rebirth-fill"></div></div>
+              <button class="rebirth-button" id="rebirth" disabled>Rebirth for a 2x boost</button>
+              <button class="rebirth-store-link" id="open-store">&#129370; Egg store &middot; <span id="rp-mini">0</span> &#10022;</button>
           </section>
-          <section class="world-shop" data-world="woods" aria-labelledby="woods-shop-title">
-            <div class="world-shop-head"><span id="woods-shop-title">&#127794; Woods upgrades</span><span class="world-shop-note" id="woods-shop-note"></span><button class="world-go" data-go="woods" hidden>Go there</button></div>
-            <article class="upgrade">
-              <div class="upgrade-top"><div class="upgrade-icon emoji-icon" aria-hidden="true">&#127807;</div><div><div class="upgrade-name">Mossy cushion</div><div class="level" id="moss-level">LEVEL 0</div></div></div>
-              <p class="upgrade-desc" id="moss-desc"></p>
-              <button class="buy" id="buy-moss" data-upgrade="moss" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="moss-cost"></span></span></button>
-            </article>
-            <article class="upgrade">
-              <div class="upgrade-top"><div class="upgrade-icon emoji-icon" aria-hidden="true">&#10024;</div><div><div class="upgrade-name">Firefly glow</div><div class="level" id="firefly-level">LEVEL 0</div></div></div>
-              <p class="upgrade-desc" id="firefly-desc"></p>
-              <button class="buy" id="buy-firefly" data-upgrade="firefly" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="firefly-cost"></span></span></button>
-            </article>
-          </section>
-          <section class="world-shop" data-world="tower" aria-labelledby="tower-shop-title">
-            <div class="world-shop-head"><span id="tower-shop-title">&#127984; Tower upgrades</span><span class="world-shop-note" id="tower-shop-note"></span><button class="world-go" data-go="tower" hidden>Go there</button></div>
-            <article class="upgrade">
-              <div class="upgrade-top"><div class="upgrade-icon emoji-icon" aria-hidden="true">&#128276;</div><div><div class="upgrade-name">Bell tower</div><div class="level" id="bell-level">LEVEL 0</div></div></div>
-              <p class="upgrade-desc" id="bell-desc"></p>
-              <button class="buy" id="buy-bell" data-upgrade="bell" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="bell-cost"></span></span></button>
-            </article>
-            <article class="upgrade">
-              <div class="upgrade-top"><div class="upgrade-icon emoji-icon" aria-hidden="true">&#129668;</div><div><div class="upgrade-name">Echo spell</div><div class="level" id="spell-level">LEVEL 0</div></div></div>
-              <p class="upgrade-desc" id="spell-desc"></p>
-              <button class="buy" id="buy-spell" data-upgrade="spell" disabled><span>Upgrade</span><span class="price"><i class="mini-coin" aria-hidden="true">P</i><span id="spell-cost"></span></span></button>
-            </article>
-          </section>
+          </div>
           <p class="shop-note">No rush. No wrong moves. Just one more pop.</p>
-          <section class="rebirth-card" aria-labelledby="rebirth-title">
-            <div class="rebirth-top"><h3 id="rebirth-title">A new beginning.</h3><span class="boost-badge" id="boost-badge">1x forever boost</span></div>
-            <p>Start fresh. Come back stronger. Rebirth resets coins and upgrades for a permanent +100% earnings boost and <b>rebirth points</b> to spend on eggs.</p>
-            <div class="rebirth-goal"><span id="rebirth-count">0 rebirths</span>                        <span id="rebirth-cost">10,000 coins</span></div>
-                        <div class="rebirth-meter" role="progressbar" aria-label="Coins toward rebirth" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="0" id="rebirth-progress"><div id="rebirth-fill"></div></div>
-            <button class="rebirth-button" id="rebirth" disabled>Rebirth for a 2x boost</button>
-            <button class="rebirth-store-link" id="open-store">&#10022; <span id="rp-mini">0</span> rebirth points &middot; Open egg store</button>
-          </section>
-        </aside>
+        </section>
       </div>
       <dialog class="rebirth-store" id="rebirth-store" aria-labelledby="store-title">
         <button class="store-close" id="close-store" aria-label="Close egg store">&#10005;</button>
@@ -1855,6 +1844,10 @@
           $(`${key}-cost`).textContent = maxed ? "MAX" : format(price);
           button.firstElementChild.textContent = maxed ? "Fully upgraded" : away ? `Visit ${world.name} to buy` : "Upgrade";
           button.disabled = maxed || away || state.coins < price;
+          $(`${key}-bar`).style.width = `${maxed ? 100 : Math.min(100, state.coins / price * 100)}%`;
+          const card = button.closest(".upgrade");
+          card.classList.toggle("maxed", maxed);
+          card.classList.toggle("ready", !button.disabled);
           button.setAttribute("aria-label", maxed ? `${config.name}, fully upgraded` : away ? `${config.name}: switch to the ${world.name} world to buy` : `Upgrade ${config.name} for ${price} coins`);
         }
         for (const [id, world] of Object.entries(WORLDS)) {
